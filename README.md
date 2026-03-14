@@ -187,4 +187,20 @@ plt.legend()
 plt.show()
 ```
 
+![Distribution of VADER Compound Scores](https://github.com/PabloCH2410/Sentiment-Analysis_from_Webscraping/blob/6d90edefb55d1e172f53f1ddd99a727689d99fcf/Distribution%20of%20VADER%20Compound%20Scores.png)
+
+## Distribution of positive, negative and neutral scores (VADER)
+
+The columns “Sentiment_pos”, “Sentiment_neg” and “Sentiment_neutral” are reorganised to create a box plot comparing the proportions of each word type in the quotes. The boxplot shows that the neutral score is the highest (median ~0.6–0.7), followed by the positive (median ~0.2) and the negative (median ~0.1). This indicates that most words are neutral, with few negative words.
+
+```python
+scores_vader = df_final[['Sentiment_pos', 'Sentiment_neg', 'Sentiment_neutral']].melt(var_name='Type', value_name='Score')
+
+plt.figure(figsize=(10, 6))
+sns.boxplot(data=scores_vader, x='Type', y='Score', palette='Set2')
+plt.title('Distribution of Positive, Negative, and Neutral Scores (VADER)')
+plt.ylabel('Score')
+plt.show()
+```
+
 ![Distribution of VADER Compound Scores]()
