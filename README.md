@@ -203,7 +203,7 @@ plt.ylabel('Score')
 plt.show()
 ```
 
-![Distribution of VADER Compound Scores](https://github.com/PabloCH2410/Sentiment-Analysis_from_Webscraping/blob/9b956fe31545aec5238f68dfee8ee60c2e75de97/Distribution%20of%20Positive%2C%20Negative%2C%20and%20Neutral%20Scores%20(VADER).png)
+![Distribution of Positive, Negative, and Neutral Scores (VADER)](https://github.com/PabloCH2410/Sentiment-Analysis_from_Webscraping/blob/9b956fe31545aec5238f68dfee8ee60c2e75de97/Distribution%20of%20Positive%2C%20Negative%2C%20and%20Neutral%20Scores%20(VADER).png)
 
 ## Frequency of sentiment labels according to VADER
 
@@ -218,7 +218,7 @@ plt.ylabel('Number of Quotes')
 plt.show()
 ```
 
-![Distribution of VADER Compound Scores](https://github.com/PabloCH2410/Sentiment-Analysis_from_Webscraping/blob/37a802ac4fdf1c25953583755a97c66a691775cc/VADER%20Sentiment%20Classification%20distribution.png)
+![VADER Sentiment Classification](https://github.com/PabloCH2410/Sentiment-Analysis_from_Webscraping/blob/37a802ac4fdf1c25953583755a97c66a691775cc/VADER%20Sentiment%20Classification%20distribution.png)
 
 ## Frequency of sentiment labels according to NaiveBayes
 
@@ -233,3 +233,29 @@ plt.ylabel('Number of Quotes')
 plt.show()
 ```
 
+![NaiveBayes Sentiment Classification](https://github.com/PabloCH2410/Sentiment-Analysis_from_Webscraping/blob/571016720ae5acae8f2fcba9d305b27e5b9883dd/NaiveBayes%20Sentiment%20Classification%20distribution.png)
+
+## Agreement between VADER and NaiveBayes (confusion matrix)
+
+The confusion matrix shows the agreement and disagreement between the two methods.
+The image shows:
+ - VADER negative vs NB negative: 11
+ - VADER negative vs NB positive: 18
+ - VADER positive vs NB negative: 11
+ - VADER positive vs NB positive: 38
+This indicates moderate agreement (49 agreements, 29 disagreements).
+
+```python
+if 'NB_label' not in df_final.columns:
+    df_final['NB_label'] = df_final['Clasification_NaiveBayes'].map({'pos': 'Positive', 'neg': 'Negative'})
+
+crosstab = pd.crosstab(df_final['Sentiment_VADER_label'], df_final['NB_label'], 
+                        rownames=['VADER'], colnames=['NaiveBayes'])
+
+plt.figure(figsize=(8, 6))
+sns.heatmap(crosstab, annot=True, fmt='d', cmap='Blues', cbar=False)
+plt.title('Agreement Between VADER and NaiveBayes')
+plt.show()
+```
+
+![Agreement Between VADER and NaiveBayes]()
