@@ -135,7 +135,7 @@ sentiment_df = pd.DataFrame({
     'Sentiment_VADER_label': sentiment_labels})
 ```
 
-## Sentiment analysis NaiveByaes
+## Sentiment analysis NaiveBayes
 
 It is based on Bayes' theorem, which relates inverse conditional probability. In the context of sentiment analysis, the conditional probabilities that a document belongs to a given sentiment category are calculated based on its combination of words.
 
