@@ -14,6 +14,7 @@ Throughout the project, we will look at the following steps to follow in order t
 - [Webscraping](#webscraping)
 - [Sentiment analysis VADeR](#sentiment-analysis-vader)
 - [Visual analysis](#visual-analysis)
+- [Conclusions](#conclusions)
 - [References](#references)
 
 # Libraries
@@ -318,4 +319,20 @@ plt.tight_layout()
 plt.show()
 ```
 
-![Average Sentiment by Author (VADER Compound)]()
+![Average Sentiment by Author (VADER Compound)](https://github.com/PabloCH2410/Sentiment-Analysis_from_Webscraping/blob/cc5416eae9d0a7aef51b6c4978b834ddc16f9747/Average%20Sentiment%20by%20Author%20(VADER%20Compound).png)
+
+# Conclusions
+
+Throughout this project, we have seen how to scrape data from a website and then subject it to sentiment analysis. In this case, we have done so using quotes from famous people, but this same project could be applied to user opinions on a product or to Google reviews of a business.
+
+Obtaining this type of data and being able to analyse the sentiments of the writer has significant business applications from a strategic perspective. We can utilise these tools through models such as VADER or NaiveBayes, but there are also many other libraries available for this purpose. In this project, we have analysed these two and examined the differences and similarities between them.
+
+# References
+
+[VADER-Sentiment-Analysis](https://vadersentiment.readthedocs.io/en/latest/pages/introduction.html)
+
+[TextBlob: Simplified Text Processing](https://textblob.readthedocs.io/en/dev/)
+
+[Sentiment Analysis Using VADER: A Comprehensive Guide](https://pyquesthub.com/sentiment-analysis-using-vader-a-comprehensive-guide)
+
+[Quotes to Scrape](http://quotes.toscrape.com/)
