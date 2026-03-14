@@ -283,4 +283,22 @@ plt.legend()
 plt.show()
 ```
 
-![VADER Compound vs NaiveBayes Positive Probability]()
+![VADER Compound vs NaiveBayes Positive Probability](https://github.com/PabloCH2410/Sentiment-Analysis_from_Webscraping/blob/ec21fb09dc15a48fc3a6bdf484ce6248d102ec41/VADER%20Compound%20vs%20NaiveBayes%20Positive%20Probability.png)
+
+## VADER compound based on the NaiveBayes classification
+
+Box plot comparing the distribution of the VADER compound for citations that NaiveBayes classified as Positive vs Negative. The horizontal red line is the VADER threshold (0).
+
+There is significant overlap between the ranges, indicating that NaiveBayes does not discriminate well based on the VADER compound; there are citations with a very negative compound classified as positive and vice versa.
+
+```python
+plt.figure(figsize=(8, 6))
+sns.boxplot(data=df_final, x='NB_label', y='Sentimiento_Compound', palette='Set2')
+plt.axhline(0, color='red', linestyle='--')
+plt.title('VADER Compound by NaiveBayes Classification')
+plt.xlabel('NaiveBayes Label')
+plt.ylabel('VADER Compound')
+plt.show()
+```
+
+![VADER Compound by NaiveBayes Classification]()
