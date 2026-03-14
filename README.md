@@ -203,4 +203,20 @@ plt.ylabel('Score')
 plt.show()
 ```
 
+![Distribution of VADER Compound Scores](https://github.com/PabloCH2410/Sentiment-Analysis_from_Webscraping/blob/9b956fe31545aec5238f68dfee8ee60c2e75de97/Distribution%20of%20Positive%2C%20Negative%2C%20and%20Neutral%20Scores%20(VADER).png)
+
+## Frequency of sentiment labels according to VADER
+
+Counts how many mentions were classified as Positive, Neutral or Negative by VADER. The image shows 49 positive, 29 negative and 22 neutral mentions, confirming the positive bias of the corpus.
+
+```python
+plt.figure(figsize=(8, 5))
+sns.countplot(data=df_final, x='Sentiment_VADER_label', order=['Positive', 'Neutral', 'Negative'], palette='viridis')
+plt.title('VADER Sentiment Classification')
+plt.xlabel('Label')
+plt.ylabel('Number of Quotes')
+plt.show()
+```
+
 ![Distribution of VADER Compound Scores]()
+
