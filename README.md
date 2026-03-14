@@ -18,7 +18,7 @@ Throughout the project, we will look at the following steps to follow in order t
 - [References](#references)
 
 # Libraries
-## Webscraping
+## Webscraping libraries
 ```python
 from selenium import webdriver
 from bs4 import BeautifulSoup
