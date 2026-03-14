@@ -301,4 +301,21 @@ plt.ylabel('VADER Compound')
 plt.show()
 ```
 
-![VADER Compound by NaiveBayes Classification]()
+![VADER Compound by NaiveBayes Classification](https://github.com/PabloCH2410/Sentiment-Analysis_from_Webscraping/blob/d539f7cff108e1f55f253beba84c8e52654e11c7/VADER%20Compound%20by%20NaiveBayes%20Classification.png)
+
+## Average sentiment by author
+
+The image shows a wide variety: authors such as Elie Wiesel have a very high average (0.95), whilst Jimi Hendrix appears with a compound average below -0.75. This allows us to identify which authors tend to have more positive or negative citations.
+
+```python
+author_sent = df_final.groupby(df.index)['Sentimiento_Compound'].mean().sort_values()
+
+plt.figure(figsize=(10, 8))
+author_sent.plot(kind='barh', color='coral')
+plt.title('Average Sentiment by Author (VADER Compound)')
+plt.xlabel('Average Compound')
+plt.tight_layout()
+plt.show()
+```
+
+![Average Sentiment by Author (VADER Compound)]()
