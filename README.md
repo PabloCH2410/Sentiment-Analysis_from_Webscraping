@@ -12,7 +12,7 @@ Throughout the project, we will look at the following steps to follow in order t
 
 - [Libraries](#libraries)
 - [Webscraping](#webscraping)
-- [Sentiment analysis VADeR](#sentiment-analysis-vader)
+- [Sentiment analysis](#sentiment-analysis)
 - [Visual analysis](#visual-analysis)
 - [Conclusions](#conclusions)
 - [References](#references)
@@ -92,7 +92,9 @@ df = pd.DataFrame(df_data)
 df.set_index('Name', inplace=True)
 ```
 
-# Sentiment analysis VADeR
+# Sentiment analysis
+
+## Sentiment analysis VADeR
 
 VADER (Valance Aware Dictionary and sEntiment Reasoner) is a rule-based, lexicon-based sentiment analysis model, specially optimised for short texts such as those found on social media. It uses a predefined dictionary that assigns each word a valence (polarity) score indicating whether it is positive or negative, as well as its intensity. It also considers the context of the words, such as punctuation marks or capitalisation.
 
@@ -133,7 +135,7 @@ sentiment_df = pd.DataFrame({
     'Sentiment_VADER_label': sentiment_labels})
 ```
 
-# Sentiment analysis NaiveByaes
+## Sentiment analysis NaiveByaes
 
 It is based on Bayes' theorem, which relates inverse conditional probability. In the context of sentiment analysis, the conditional probabilities that a document belongs to a given sentiment category are calculated based on its combination of words.
 
