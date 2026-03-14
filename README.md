@@ -27,7 +27,7 @@ from urllib.parse import urljoin
 import pandas as pd
 import time
 ```
-## Sentiment Analysis
+## Sentiment Analysis libraries
 ```python
 from textblob import TextBlob
 from textblob.sentiments import NaiveBayesAnalyzer
