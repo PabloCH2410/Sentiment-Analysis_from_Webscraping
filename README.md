@@ -218,5 +218,18 @@ plt.ylabel('Number of Quotes')
 plt.show()
 ```
 
-![Distribution of VADER Compound Scores]()
+![Distribution of VADER Compound Scores](https://github.com/PabloCH2410/Sentiment-Analysis_from_Webscraping/blob/37a802ac4fdf1c25953583755a97c66a691775cc/VADER%20Sentiment%20Classification%20distribution.png)
+
+## Frequency of sentiment labels according to NaiveBayes
+
+NaiveBayes only assigns “pos” or “neg” (no neutral). This graph shows the count (69 positive, 31 negative). It can be seen that there are more positive than negative mentions, in a similar proportion to VADER, but VADER’s neutral mentions have been split between the two.
+
+```python
+plt.figure(figsize=(8, 5))
+sns.countplot(data=df_final, x='Clasification_NaiveBayes', palette='coolwarm')
+plt.title('NaiveBayes Sentiment Classification')
+plt.xlabel('Label')
+plt.ylabel('Number of Quotes')
+plt.show()
+```
 
