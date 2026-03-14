@@ -187,4 +187,4 @@ plt.legend()
 plt.show()
 ```
 
-
+![Distribution of VADER Compound Scores]()
