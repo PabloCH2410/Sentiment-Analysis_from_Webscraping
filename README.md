@@ -258,4 +258,29 @@ plt.title('Agreement Between VADER and NaiveBayes')
 plt.show()
 ```
 
-![Agreement Between VADER and NaiveBayes]()
+![Agreement Between VADER and NaiveBayes](https://github.com/PabloCH2410/Sentiment-Analysis_from_Webscraping/blob/aa5cd47f55615f2962c037691d59f66d7cabafa8/Agreement%20between%20VADER%20and%20NaiveBayes%20(confusion%20matrix).png)
+
+## Comparison: VADER compound score vs. NaiveBayes positive probability
+
+Scatter plot showing the relationship between the compound score of each citation and the probability of it being positive according to NaiveBayes. The points are coloured according to the VADER label.
+
+Reference lines: VADER threshold at 0 (compound) and NB threshold at 0.5 (probability). Ideally, the points should cluster into consistent quadrants:
+ - Top-right: VADER positive and NB with high positive probability.
+ - Bottom-left: VADER negative and NB with low positive probability.
+
+Points in opposing quadrants indicate discrepancies. The image shows a positive correlation but with some scatter.
+
+```python
+plt.figure(figsize=(10, 6))
+sns.scatterplot(data=df_final, x='Sentimiento_Compound', y='Prob Positive', 
+                hue='Sentiment_VADER_label', palette='Set1', alpha=0.7)
+plt.axhline(0.5, color='gray', linestyle='--', label='NB threshold (0.5)')
+plt.axvline(0, color='red', linestyle='--', label='VADER threshold (0)')
+plt.title('VADER Compound vs NaiveBayes Positive Probability')
+plt.xlabel('VADER Compound')
+plt.ylabel('Positive Probability (NB)')
+plt.legend()
+plt.show()
+```
+
+![VADER Compound vs NaiveBayes Positive Probability]()
